@@ -1,0 +1,17 @@
+{% extends 'tasks/base.html' %}
+
+{% block title %}Eliminar Cuenta{% endblock %}
+
+{% block main %}
+<div class="container">
+    <h1>Eliminar Cuenta</h1>
+    <p>¿Estás seguro de que deseas eliminar tu cuenta, {{ user.username }}?</p>
+    <form method="POST">
+        {% csrf_token %}
+        <button type="submit">Eliminar Cuenta</button>
+    </form>
+    <p>
+        <a href="{% url 'tasks:account_detail' %}">Cancelar</a>
+    </p>
+</div>
+{% endblock %}

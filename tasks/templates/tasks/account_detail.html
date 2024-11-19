@@ -1,0 +1,47 @@
+{% extends 'tasks/base.html' %}
+
+{% block title %}Página de detalles de información de miembros{% endblock %}
+
+{% block main %}
+<div class="container">
+    <h1>Página de Detalles de Información de Miembros</h1>
+    <div class="info-group">
+        <label for="username">Nombre de Usuario:</label>
+        <p>{{ user.username }}</p>
+    </div>
+    <div class="info-group">
+        <label for="email">Dirección de Correo Electrónico:</label>
+        <p>{{ user.email }}</p>
+    </div>
+    <div class="info-group">
+        <label for="age">Edad:</label>
+        <p>{{ user.age }}</p>
+    </div>
+    <p>
+        <a href="{% url 'tasks:edit_account' %}">Editar</a> |
+        <a href="{% url 'tasks:change_password' %}">Cambiar contraseña</a>
+    </p>
+</div>
+{% endblock %}
+
+{% block styles %}
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+    }
+    .info-group {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+    .info-group label {
+        width: 200px; /* Ajusta este valor según tus necesidades */
+        font-weight: bold;
+    }
+    .info-group p {
+        margin: 0;
+        padding-left: 10px; /* Espacio entre la etiqueta y el valor */
+    }
+</style>
+{% endblock %}

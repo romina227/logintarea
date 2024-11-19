@@ -1,0 +1,22 @@
+{% extends 'tasks/base.html' %}
+
+{% block title %}Pantalla de Inicio de Sesión{% endblock %}
+
+{% block main %}
+<div class="container">
+    <h1>Pantalla de Inicio de Sesión</h1>
+    <form action="{% url 'tasks:login' %}" method="POST">
+        {% csrf_token %}
+        <div class="input-group">
+            <label for="email">Dirección de Correo Electrónico:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <div class="input-group">
+            <label for="password">Contraseña:</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+        <button type="submit">Acceso</button>
+        <p>¿No tienes una cuenta? <a href="{% url 'tasks:register' %}">Regístrate aquí</a></p>
+    </form>
+</div>
+{% endblock %}

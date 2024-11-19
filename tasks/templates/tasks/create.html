@@ -1,0 +1,11 @@
+{% extends "tasks/base.html" %}
+
+{% block main %}
+<h2>Crear Tarea</h2>
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}  <!-- Muestra los campos del formulario -->
+    <button type="submit">Guardar Tarea</button>
+</form>
+<a href="{% url 'tasks:index' %}">Volver</a>
+{% endblock %}
