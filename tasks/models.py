@@ -28,6 +28,8 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
     date_joined = models.DateTimeField(default=timezone.now)
+    age = models.PositiveIntegerField(null=True, blank=True)  # Nuevo campo
+
 
     objects = CustomUserManager()
 
