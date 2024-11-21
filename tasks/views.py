@@ -95,6 +95,8 @@ def change_password(request):
             update_session_auth_hash(request, user)
             messages.success(request, 'La contraseña ha sido cambiada exitosamente.')
             return redirect('tasks:account_detail')
+        else:
+            messages.error(request, 'Por favor corrige los errores del formulario.') #agregado
     else:
         form = PasswordChangeForm(user=request.user)
 
